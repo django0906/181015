@@ -12,6 +12,7 @@ headers = {
 
 }
 
+
 def crawler(url_entryway):
     r = requests.get(url_entryway, headers=headers)
 
