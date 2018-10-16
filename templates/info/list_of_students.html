@@ -10,7 +10,7 @@
 {% if list_of_students %}
     <ul>
     {% for student in list_of_students %}
-        <li><a href="/info/student/{{ student.id }}/">{{ student.student_name }}</a></li>
+        <li><a href="{% url 'student' student.id %}">{{ student.student_name }}</a></li>
     {% endfor %}
     </ul>
 {% else %}
