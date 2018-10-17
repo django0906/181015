@@ -7,7 +7,10 @@
 <body>
 
 {% if school_id_details %}
-    <p>hi there!</p>
+    <p>재학중인 학생의 정보</p>
+    {% for student in school_id_details %}
+        {{ student.from_student_name }}
+    {% endfor %}
 {% else %}
     <p>No schools in database.</p>
 {% endif %}

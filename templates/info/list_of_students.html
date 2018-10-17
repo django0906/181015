@@ -6,15 +6,14 @@
 </head>
 <body>
 
-좀 돼라 이놈아
+<h1> List of students</h1>
 
 {% if list_of_students %}
     <ul>
     {% for student in list_of_students %}
-        {{ student.get_absolute_url }}
         {% url 'info:student_details' student.id as link_to_list %}
         {% if link_to_list %}
-        <li><a href="{{ student.get_absolute_url }}">{{ student.student_name }}</a></li>
+        <li><a href="{{ link_to_list }}">{{ student.student_name }}</a></li>
         {% endif %}
     {% endfor %}
     </ul>
