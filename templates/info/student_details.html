@@ -7,7 +7,11 @@
 <body>
 
     {% if student_id_details %}
-        <p>hi there!</p>
+        <p>특정 학생의 정보</p>
+        {{ student_id_details }}
+{#        {% for student_data in student_id_details %}#}
+{#            {{ student_data }}#}
+{#        {% endfor %}#}
     {% else %}
         <p>No students in database.</p>
     {% endif %}

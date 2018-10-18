@@ -9,6 +9,9 @@ __all__ = (
 class School(models.Model):
     school_name = models.CharField(max_length=16)
 
+    def __str__(self):
+        return self.school_name
+
 
 class Students(models.Model):
     student_school_name = models.ForeignKey(
