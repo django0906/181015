@@ -8,9 +8,9 @@
 
 {% if school_id_details %}
     <p>{{ school_id_details }}의 정보</p>
-{#    {% for student in school_id_details %}#}
-{#        {{ student }}#}
-{#    {% endfor %}#}
+    {% for student in students_in_school %}
+        <p><a href="{% url 'info:student_details' student.id %}">{{ student.student_name }}</a></p>
+    {% endfor %}
     {{ school_id_details }}
     끗
 {% else %}

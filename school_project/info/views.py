@@ -31,6 +31,7 @@ def school_details(request, school_id):
     print(school_id)
     try:
         school_id_details = School.objects.get(pk=school_id)
+        students_in_school =  Students.objects.filter(student_school_name__pk=school_id)
     except School.DoesNotExist:
         raise Http404('그런건 없다.')
     else:
@@ -40,6 +41,7 @@ def school_details(request, school_id):
         context = {
             # 'school_detail': school_detail,
             'school_id_details': school_id_details,
+            'students_in_school': students_in_school,
         }
         return HttpResponse(template.render(context, request))
 
